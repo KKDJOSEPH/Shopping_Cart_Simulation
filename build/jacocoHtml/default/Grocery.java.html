@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Grocery.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Grocery.java</span></div><h1>Grocery.java</h1><pre class="source lang-java linenums">import java.util.Objects;
+
+/**
+ * Class Grocery contains information about a Grocery, including the manufacturer, name, price, minimum age, weight
+ */
+public class Grocery extends Products{
+  private Double Weight;
+  /**
+   * Constructs a new Grocery, based upon all of the provided input parameters.
+   *
+   * @param manufacturer - the manufacturer of this Grocery
+   * @param name         - the name of this Grocery
+   * @param price        - the price of this Grocery
+   * @param minimumAge   - the minimum age limit to buy this Grocery
+   * @param weight       - the weight of this Grocery
+   * @return - object Grocery
+   */
+  public Grocery(String manufacturer, String name, Double price, int minimumAge, Double weight) {
+<span class="fc" id="L19">    super(manufacturer, name, price, minimumAge);</span>
+<span class="fc" id="L20">    this.Weight = weight;</span>
+<span class="fc" id="L21">  }</span>
+  /**
+   * @return the weight
+   */
+  public Double getWeight() {
+<span class="fc" id="L26">    return Weight;</span>
+  }
+  /**
+   * Set weight
+   */
+  public void setWeight(Double weight) {
+<span class="fc" id="L32">    Weight = weight;</span>
+<span class="fc" id="L33">  }</span>
+  /**
+   * @return the Grocery's string form.
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L39">    return &quot;Grocery{&quot; +</span>
+        &quot;Weight=&quot; + Weight +
+<span class="fc" id="L41">        &quot;} &quot; + super.toString();</span>
+  }
+  /**
+   * Return if this Grocery is equal to the other object.
+   *
+   * @param o the other object
+   * @return true if two objects are equal
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L51" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L52">      return true;</span>
+    }
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">    if (!(o instanceof Grocery)) {</span>
+<span class="nc" id="L55">      return false;</span>
+    }
+<span class="fc bfc" id="L57" title="All 2 branches covered.">    if (!super.equals(o)) {</span>
+<span class="fc" id="L58">      return false;</span>
+    }
+<span class="fc" id="L60">    Grocery grocery = (Grocery) o;</span>
+<span class="fc" id="L61">    return getWeight().equals(grocery.getWeight());</span>
+  }
+  /**
+   * Hash code of the Grocery.
+   *
+   * @return hash code
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L70">    return Objects.hash(super.hashCode(), getWeight());</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

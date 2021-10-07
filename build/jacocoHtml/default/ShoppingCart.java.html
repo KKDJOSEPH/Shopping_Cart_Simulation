@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ShoppingCart.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ShoppingCart.java</span></div><h1>ShoppingCart.java</h1><pre class="source lang-java linenums">import java.util.*;
+/**
+ * Class ShoppingCart contains information about a ShoppingCart, including the cart map
+ */
+public class ShoppingCart {
+  private Map&lt;Products, Integer&gt; cart;
+  private Double totalPrice;
+  /**
+   * Constructs a new ShoppingCart
+   * @return - object ShoppingCart
+   */
+<span class="fc" id="L12">  public ShoppingCart(){</span>
+<span class="fc" id="L13">    this.cart = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L14">    this.totalPrice = 0.0;</span>
+<span class="fc" id="L15">  }</span>
+
+  /**
+   * Set cart
+   */
+  public void setCart(Map&lt;Products, Integer&gt; map) {
+<span class="fc" id="L21">    this.cart = map;</span>
+<span class="fc" id="L22">  }</span>
+
+  /**
+   * @return - total price
+   */
+  public Double getTotalPrice() {
+<span class="fc" id="L28">    return totalPrice;</span>
+  }
+  /**
+   * Set total price
+   */
+  public void setTotalPrice(Double totalPrice) {
+<span class="fc" id="L34">    this.totalPrice = totalPrice;</span>
+<span class="fc" id="L35">  }</span>
+
+  /**
+   * @return the cart
+   */
+  public Map&lt;Products, Integer&gt; getCart() {
+<span class="fc" id="L41">    return cart;</span>
+  }
+  /**
+   * @return the ShoppingCart's string form.
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L48">    return &quot;ShoppingCart{&quot; +</span>
+        &quot;cart=&quot; + cart +
+        &quot;, totalPrice=&quot; + totalPrice +
+        '}';
+  }
+
+  /**
+   * Return if this ShoppingCart is equal to the other object.
+   *
+   * @param o the other object
+   * @return true if two objects are equal
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L62" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L63">      return true;</span>
+    }
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">    if (!(o instanceof ShoppingCart)) {</span>
+<span class="nc" id="L66">      return false;</span>
+    }
+<span class="fc" id="L68">    ShoppingCart that = (ShoppingCart) o;</span>
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">    return getTotalPrice().equals(that.getTotalPrice()) &amp;&amp;</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        getCart().equals(that.getCart());</span>
+  }
+
+  /**
+   * Hash code of the ShoppingCart.
+   *
+   * @return hash code
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L80">    return Objects.hash(getCart(), getTotalPrice());</span>
+  }
+
+  /**
+   * @return whether this item has been added successfully
+   */
+  public boolean addItem(Products products, int number, Inventory inventory){
+<span class="fc" id="L87">    boolean flag = products instanceof Grocery;</span>
+<span class="fc bfc" id="L88" title="All 4 branches covered.">    if(flag &amp;&amp; inventory.getGroceryStock().get(products).getQuantity() &lt; number){</span>
+<span class="fc" id="L89">      Exception e = new NoEnoughInventory(&quot;The product &quot; + products.getClass().toString() + &quot; &quot; + products.getName() + &quot; only has &quot; +</span>
+<span class="fc" id="L90">          inventory.getGroceryStock().get(products).getQuantity() + &quot; left&quot;);</span>
+<span class="fc" id="L91">      e.printStackTrace();</span>
+<span class="fc" id="L92">      return false;</span>
+    }
+
+<span class="fc bfc" id="L95" title="All 4 branches covered.">    if(!flag &amp;&amp; inventory.getHouseholdStock().get(products).getQuantity() &lt; number){</span>
+<span class="fc" id="L96">      Exception e =  new NoEnoughInventory(&quot;The product &quot; + products.getClass().toString() + &quot; &quot; + products.getName() + &quot; only has &quot; +</span>
+<span class="fc" id="L97">          inventory.getHouseholdStock().get(products).getQuantity() + &quot; left&quot;);</span>
+<span class="fc" id="L98">      e.printStackTrace();</span>
+<span class="fc" id="L99">      return false;</span>
+    }
+<span class="fc" id="L101">    cart.put(products, cart.getOrDefault(products, 0) + number);</span>
+<span class="fc" id="L102">    return true;</span>
+  }
+
+
+  /**
+   * Delete an item from the cart
+   */
+  public void deleteItem(Products products){
+<span class="fc" id="L110">    cart.remove(products);</span>
+<span class="fc" id="L111">  }</span>
+
+  public void emptyCart(){
+<span class="fc" id="L114">    this.cart.clear();</span>
+<span class="fc" id="L115">    this.totalPrice = 0.0;</span>
+<span class="fc" id="L116">  }</span>
+  /**
+   * Calculate the total price for the cart
+   */
+  public void calculatePrice(){
+<span class="fc" id="L121">    Double price = 0.0;</span>
+<span class="fc bfc" id="L122" title="All 2 branches covered.">    for(Products i : cart.keySet()){</span>
+<span class="fc" id="L123">      price += i.getPrice() * (double)cart.get(i);</span>
+<span class="fc" id="L124">    }</span>
+<span class="fc" id="L125">    this.totalPrice = price;</span>
+<span class="fc" id="L126">  }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

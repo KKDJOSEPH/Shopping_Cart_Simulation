@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="StockItemTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-10-06T21:41:59" hostname="KKDJoseph-PC" time="0.006">
+  <properties/>
+  <testcase name="setProduct()" classname="StockItemTest" time="0.001"/>
+  <testcase name="testToString()" classname="StockItemTest" time="0.001"/>
+  <testcase name="setQuantity()" classname="StockItemTest" time="0.001"/>
+  <testcase name="getProduct()" classname="StockItemTest" time="0.001"/>
+  <testcase name="getQuantity()" classname="StockItemTest" time="0.0"/>
+  <testcase name="testHashCode()" classname="StockItemTest" time="0.0"/>
+  <testcase name="checkQuantity()" classname="StockItemTest" time="0.001"/>
+  <testcase name="testEquals()" classname="StockItemTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

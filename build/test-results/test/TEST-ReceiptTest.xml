@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ReceiptTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2021-10-06T21:41:59" hostname="KKDJoseph-PC" time="0.013">
+  <properties/>
+  <testcase name="addAgeRequireItem()" classname="ReceiptTest" time="0.0"/>
+  <testcase name="addOutofStockItem()" classname="ReceiptTest" time="0.0"/>
+  <testcase name="getOutOfStock()" classname="ReceiptTest" time="0.0"/>
+  <testcase name="testToString()" classname="ReceiptTest" time="0.001"/>
+  <testcase name="getTotalPrice()" classname="ReceiptTest" time="0.001"/>
+  <testcase name="getAgeRequire()" classname="ReceiptTest" time="0.001"/>
+  <testcase name="setOutOfStock()" classname="ReceiptTest" time="0.001"/>
+  <testcase name="setTotalPrice()" classname="ReceiptTest" time="0.0"/>
+  <testcase name="setAgeRequire()" classname="ReceiptTest" time="0.0"/>
+  <testcase name="testHashCode()" classname="ReceiptTest" time="0.001"/>
+  <testcase name="setReceived()" classname="ReceiptTest" time="0.001"/>
+  <testcase name="getReceived()" classname="ReceiptTest" time="0.001"/>
+  <testcase name="addReceivedItem()" classname="ReceiptTest" time="0.001"/>
+  <testcase name="testEquals()" classname="ReceiptTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

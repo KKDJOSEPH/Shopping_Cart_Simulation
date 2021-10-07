@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Inventory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Inventory.java</span></div><h1>Inventory.java</h1><pre class="source lang-java linenums">import java.util.*;
+
+/**
+ * Class Inventory contains information about the inventory, including the grocery stock map and the household stock map
+ */
+public class Inventory {
+  private Map&lt;Grocery, StockItem&gt; GroceryStock;
+  private Map&lt;Household, StockItem&gt; HouseholdStock;
+  /**
+   * Constructs a new Inventory, based upon all of the provided input parameters.
+   *
+   * @param groceryStock - the grocery stock
+   * @param householdStock - the household stock
+   * @return - object Inventory
+   */
+<span class="fc" id="L16">  public Inventory(Map&lt;Grocery, StockItem&gt; groceryStock, Map&lt;Household, StockItem&gt; householdStock){</span>
+<span class="fc" id="L17">    this.GroceryStock = groceryStock;</span>
+<span class="fc" id="L18">    this.HouseholdStock = householdStock;</span>
+<span class="fc" id="L19">  }</span>
+  /**
+   * @return the grocery stock
+   */
+  public Map&lt;Grocery, StockItem&gt; getGroceryStock() {
+<span class="fc" id="L24">    return GroceryStock;</span>
+  }
+  /**
+   * @return the household stock
+   */
+  public Map&lt;Household, StockItem&gt; getHouseholdStock() {
+<span class="fc" id="L30">    return HouseholdStock;</span>
+  }
+  /**
+   * Set grocery stock
+   */
+  public void setGroceryStock(Map&lt;Grocery, StockItem&gt; groceryStock) {
+<span class="fc" id="L36">    GroceryStock = groceryStock;</span>
+<span class="fc" id="L37">  }</span>
+  /**
+   * Set household stock
+   */
+  public void setHouseholdStock(Map&lt;Household, StockItem&gt; householdStock) {
+<span class="fc" id="L42">    HouseholdStock = householdStock;</span>
+<span class="fc" id="L43">  }</span>
+  /**
+   * @return the total retail value
+   */
+  public int totalRetailValue(){
+<span class="fc" id="L48">    int answer = 0;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">    for(StockItem i : GroceryStock.values()) answer += i.getProduct().getPrice() * i.getQuantity();</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">    for(StockItem i : HouseholdStock.values()) answer += i.getProduct().getPrice() * i.getQuantity();</span>
+<span class="fc" id="L51">    return answer;</span>
+  }
+  /**
+   * Return if this Inventory is equal to the other object.
+   *
+   * @param o the other object
+   * @return true if two objects are equal
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L61" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L62">      return true;</span>
+    }
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">    if (!(o instanceof Inventory)) {</span>
+<span class="nc" id="L65">      return false;</span>
+    }
+<span class="fc" id="L67">    Inventory inventory = (Inventory) o;</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">    return getGroceryStock().equals(inventory.getGroceryStock()) &amp;&amp;</span>
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">        getHouseholdStock().equals(inventory.getHouseholdStock());</span>
+  }
+  /**
+   * Hash code of the Inventory.
+   *
+   * @return hash code
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L78">    return Objects.hash(getGroceryStock(), getHouseholdStock());</span>
+  }
+  /**
+   * @return the Inventory's string form.
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L85">    return &quot;Inventory{&quot; +</span>
+        &quot;GroceryStock=&quot; + GroceryStock +
+        &quot;, HouseholdStock=&quot; + HouseholdStock +
+        '}';
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

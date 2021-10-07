@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Household.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Household.java</span></div><h1>Household.java</h1><pre class="source lang-java linenums">import java.util.Objects;
+
+/**
+ * Class Household contains information about a Household, including the manufacturer, name, price, minimum age, units
+ */
+public class Household extends Products{
+  private int Units;
+  /**
+   * Constructs a new Household, based upon all of the provided input parameters.
+   *
+   * @param manufacturer - the manufacturer of this Household
+   * @param name         - the name of this Household
+   * @param price        - the price of this Household
+   * @param minimumAge   - the minimum age limit to buy this Household
+   * @param units       - the unit of this Household
+   * @return - object Household
+   */
+  public Household(String manufacturer, String name, Double price, int minimumAge, int units) {
+<span class="fc" id="L19">    super(manufacturer, name, price, minimumAge);</span>
+<span class="fc" id="L20">    this.Units = units;</span>
+<span class="fc" id="L21">  }</span>
+  /**
+   * @return the unit
+   */
+  public int getUnits() {
+<span class="fc" id="L26">    return Units;</span>
+  }
+  /**
+   * Set units
+   */
+  public void setUnits(int units) {
+<span class="fc" id="L32">    Units = units;</span>
+<span class="fc" id="L33">  }</span>
+  /**
+   * Return if this Household is equal to the other object.
+   *
+   * @param o the other object
+   * @return true if two objects are equal
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L42" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L43">      return true;</span>
+    }
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">    if (!(o instanceof Household)) {</span>
+<span class="nc" id="L46">      return false;</span>
+    }
+<span class="fc bfc" id="L48" title="All 2 branches covered.">    if (!super.equals(o)) {</span>
+<span class="fc" id="L49">      return false;</span>
+    }
+<span class="fc" id="L51">    Household household = (Household) o;</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">    return getUnits() == household.getUnits();</span>
+  }
+  /**
+   * Hash code of the Household.
+   *
+   * @return hash code
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L61">    return Objects.hash(super.hashCode(), getUnits());</span>
+  }
+  /**
+   * @return the Household's string form.
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L68">    return &quot;Household{&quot; +</span>
+        &quot;Units=&quot; + Units +
+<span class="fc" id="L70">        &quot;} &quot; + super.toString();</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

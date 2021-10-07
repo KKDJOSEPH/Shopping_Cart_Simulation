@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="936.5" y="383.0">Grocery</node>
+    <node x="539.90625" y="0.0">Products</node>
+    <node x="622.0" y="628.0">Cheese</node>
+    <node x="1255.0" y="628.0">Beer</node>
+    <node x="0.0" y="628.0">PaperTowels</node>
+    <node x="335.0" y="733.0">Receipt</node>
+    <node x="938.0" y="628.0">Salmon</node>
+    <node x="248.0" y="1203.0">NoEnoughInventory</node>
+    <node x="148.40625" y="383.0">Household</node>
+    <node x="320.0" y="628.0">Shampoo</node>
+    <node x="0.0" y="1203.0">StockItem</node>
+    <node x="679.0" y="733.0">ShoppingCart</node>
+    <node x="0.0" y="733.0">Customers</node>
+    <node x="1014.0" y="733.0">Inventory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Cheese" target="Grocery">
+      <point x="0.0" y="-30.0" />
+      <point x="770.0" y="603.0" />
+      <point x="986.5" y="603.0" />
+      <point x="-100.0" y="97.5" />
+    </edge>
+    <edge source="Salmon" target="Grocery">
+      <point x="0.0" y="-30.0" />
+      <point x="0.0" y="97.5" />
+    </edge>
+    <edge source="Beer" target="Grocery">
+      <point x="0.0" y="-30.0" />
+      <point x="1395.5" y="603.0" />
+      <point x="1186.5" y="603.0" />
+      <point x="100.0" y="97.5" />
+    </edge>
+    <edge source="Household" target="Products">
+      <point x="0.0" y="-97.5" />
+      <point x="292.90625" y="358.0" />
+      <point x="603.90625" y="358.0" />
+      <point x="-64.0" y="166.5" />
+    </edge>
+    <edge source="Grocery" target="Products">
+      <point x="0.0" y="-97.5" />
+      <point x="1086.5" y="358.0" />
+      <point x="731.90625" y="358.0" />
+      <point x="64.0" y="166.5" />
+    </edge>
+    <edge source="Shampoo" target="Household">
+      <point x="0.0" y="-30.0" />
+      <point x="461.0" y="603.0" />
+      <point x="365.15625" y="603.0" />
+      <point x="72.25" y="97.5" />
+    </edge>
+    <edge source="PaperTowels" target="Household">
+      <point x="0.0" y="-30.0" />
+      <point x="150.0" y="603.0" />
+      <point x="220.65625" y="603.0" />
+      <point x="-72.25" y="97.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6095238095238096" x="443.0" y="1198.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="zh"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StockItem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Assignment2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">StockItem.java</span></div><h1>StockItem.java</h1><pre class="source lang-java linenums">import java.util.Objects;
+
+/**
+ * Class StockItem contains information about an StockItem, including product and quantity
+ */
+public class StockItem {
+  private Products Product;
+  private int Quantity;
+  /**
+   * Constructs a new StockItem, based upon all of the provided input parameters.
+   *
+   * @param product - the product of this stock item
+   * @param quantity         - the quantity of this stock item
+   * @return - object StockItem
+   */
+<span class="fc" id="L16">  public StockItem(Products product, int quantity){</span>
+<span class="fc" id="L17">    this.Product = product;</span>
+<span class="fc" id="L18">    this.Quantity = quantity;</span>
+<span class="fc" id="L19">  }</span>
+  /**
+   * @return the product
+   */
+  public Products getProduct() {
+<span class="fc" id="L24">    return Product;</span>
+  }
+  /**
+   * @return the quantity
+   */
+  public int getQuantity() {
+<span class="fc" id="L30">    return Quantity;</span>
+  }
+  /**
+   * Set product
+   */
+  public void setProduct(Products product) {
+<span class="fc" id="L36">    Product = product;</span>
+<span class="fc" id="L37">  }</span>
+  /**
+   * Set quantity
+   */
+  public void setQuantity(int quantity) {
+<span class="fc" id="L42">    Quantity = quantity;</span>
+<span class="fc" id="L43">  }</span>
+
+  public boolean checkQuantity(int num){
+<span class="fc bfc" id="L46" title="All 2 branches covered.">    return Quantity &gt;= num;</span>
+  }
+  /**
+   * @return the StockItem's string form.
+   */
+  @Override
+  public String toString() {
+<span class="fc" id="L53">    return &quot;StockItem{&quot; +</span>
+        &quot;Product=&quot; + Product +
+        &quot;, Quantity=&quot; + Quantity +
+        '}';
+  }
+  /**
+   * Return if this StockItem is equal to the other object.
+   *
+   * @param o the other object
+   * @return true if two objects are equal
+   */
+  @Override
+  public boolean equals(Object o) {
+<span class="fc bfc" id="L66" title="All 2 branches covered.">    if (this == o) {</span>
+<span class="fc" id="L67">      return true;</span>
+    }
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">    if (!(o instanceof StockItem)) {</span>
+<span class="nc" id="L70">      return false;</span>
+    }
+<span class="fc" id="L72">    StockItem stockItem = (StockItem) o;</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">    return getQuantity() == stockItem.getQuantity() &amp;&amp;</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        getProduct().equals(stockItem.getProduct());</span>
+  }
+  /**
+   * Hash code of the StockItem.
+   *
+   * @return hash code
+   */
+  @Override
+  public int hashCode() {
+<span class="fc" id="L83">    return Objects.hash(getProduct(), getQuantity());</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

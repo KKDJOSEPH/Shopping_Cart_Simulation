@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ProductsTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2021-10-06T21:41:58" hostname="KKDJoseph-PC" time="0.01">
+  <properties/>
+  <testcase name="testToString()" classname="ProductsTest" time="0.001"/>
+  <testcase name="getMinimumAge()" classname="ProductsTest" time="0.001"/>
+  <testcase name="getManufacturer()" classname="ProductsTest" time="0.001"/>
+  <testcase name="getName()" classname="ProductsTest" time="0.001"/>
+  <testcase name="setMinimumAge()" classname="ProductsTest" time="0.001"/>
+  <testcase name="setManufacturer()" classname="ProductsTest" time="0.0"/>
+  <testcase name="testHashCode()" classname="ProductsTest" time="0.0"/>
+  <testcase name="testEquals()" classname="ProductsTest" time="0.001"/>
+  <testcase name="setPrice()" classname="ProductsTest" time="0.001"/>
+  <testcase name="getPrice()" classname="ProductsTest" time="0.0"/>
+  <testcase name="setName()" classname="ProductsTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
